@@ -450,6 +450,7 @@
     .choice { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
     .choice input { position: absolute; opacity: 0; pointer-events: none; }
     .choice label { display: block; text-align: center; padding: 8px 4px; border: 1px solid rgba(122, 23, 23, .4); background: var(--ivory); cursor: pointer; font-size: 13px; color: var(--ink); margin: 0; }
+    html[lang="en"] .choice label { font-size: 12px; padding-left: 2px; padding-right: 2px; }   /* keeps 'Regretfully decline' on one line */
     .choice input:checked + label { background: var(--wine); color: var(--ivory); border-color: var(--wine); }
     .choice input:focus-visible + label { outline: 2px solid var(--gold); outline-offset: 2px; }
     form .btn { width: 100%; padding: 11px; font-size: 15px; letter-spacing: 4px; }
@@ -745,7 +746,7 @@
 
     <!-- 8. Venue -->
     <section class="venue">
-      <div class="love-line" data-reveal="up"><span class="hearts">♥♥♥</span><i>love is all we have</i></div>
+      <div class="love-line" data-reveal="up"><span class="hearts">♥♥♥</span><i>love is all we need</i></div>
       <div class="frame wide" data-reveal="zoom"><img src="images/lion.jpg" alt="新人与舞狮头" loading="lazy"></div>
       <div class="venue-info" id="venue">
       <span class="banner" data-reveal="drop" data-i18n="venueBanner">吃好喝好！不醉不归！婚礼见！</span>
@@ -758,7 +759,7 @@
         <span class="vertical" data-i18n="venueR">地点</span>
       </div>
       <p class="venue-name" data-reveal="up">東勝海鲜酒家<span class="hall">Hall C</span></p>
-      <p class="venue-en" data-reveal="up">Exquisite Ipoh Restaurant and Banquet</p>
+      <p class="venue-en" data-reveal="up">Exquisite Seafood Restaurant</p>
       <p class="subtle" data-reveal="up" data-i18n="city">马来西亚 · 怡保</p>
       <div class="buttons" data-reveal="up">
         <a class="btn solid" href="https://maps.app.goo.gl/95ZVWTcPvEnDkT8U9" target="_blank" rel="noopener noreferrer">Google Maps</a>
@@ -893,20 +894,20 @@
         namesShort: 'Ian & Geranium', brideName: 'Geranium Cheng', groomName: 'Ian Shum',
         almDow: 'Saturday', almLunar: 'Lunar 12/16',
         dY: 'YEAR', dM: 'MON', dD: 'DAY',
-        heroL: 'Join', heroStamp: 'our wedding', heroR: 'Us', heroBig: 'Joyful News', heroYi: 'Wedding Day',
+        heroL: 'Join', heroStamp: 'Wedding Feast', heroR: 'Us', heroBig: 'Joyful News', heroYi: 'Wedding Day',
         introTitle: 'We\'re Getting Married',
         introHi: 'Hi, dear family and friends,',
-        introText: 'As we sat down to write this invitation,\nwe realised\nit is not just a wedding invitation,\nit is a letter to every one of you\nwho has walked with us through the years.\nBecause of you, we are who we are today,\nso for the first step of our next journey,\nwe would love to have you there.',
-        introSign: 'Let\'s raise a glass,\nto the years behind us\nand the days ahead.',
-        newsBanner: 'The Shum boy weds the Cheng girl!', newsExtra: '號外', newsText: 'Two families, one promise.\nIn love, for all our days.',
+        introText: 'As we sat down to write this invitation,\nwe realised\nit\'s more than a wedding invitation.\nIt\'s a letter to every one of you\nwho has walked with us through the years.\nYou helped make us who we are today,\nand as we begin this next chapter,\nwe\'d love to have you by our side.',
+        introSign: 'Let\'s raise a glass\nto the years behind us\nand the days ahead.',
+        newsBanner: 'The Shum boy weds the Cheng girl!', newsExtra: '號外', newsText: 'Two families,\none promise,\nlove for a lifetime.',
         punText: 'Falling for you was the luckiest thing.\nLife is long, and I\'ll always be true to you.',
-        fateBanner: 'Simply meant to be!', fateText: 'From today, we\'re teammates for life.\nNew places to see, new food to try,\ngrowing old together, slowly,\nhappy for the rest of our lives.',
+        fateBanner: 'Simply meant to be!', fateText: 'From this day forward, side by side,\nto wander far and savour every taste,\nto grow old gently, hand in hand,\nand be happy all our days.',
         countBanner: 'Long time no see! Come celebrate with us', cdD: 'days', cdH: 'hrs', cdM: 'min', cdS: 'sec',
         when: 'Saturday, 23 January 2027', lunar: '16th day of the 12th lunar month', reception: 'Guest arrival', dinner: 'Dinner begins',
-        eveNote: 'The evening before, Friday 22 January,\nour families will have a buffet at home\nDrop by early to chat and share the joy',
+        eveNote: 'On Friday evening, 22 January,\nour families are hosting a buffet at home.\nCome early, catch up and share the joy.',
         venueBanner: 'Eat well, drink well, see you there!', venueL: '婚宴', venueR: '地点', city: 'Ipoh · Malaysia',
-        rsvpBanner: 'We\'d love to have you there', rsvpL: '良辰已定', rsvpR: '静候佳宾',
-        fName: 'Name', fAttend: 'Will you attend?', fYes: 'Joyfully yes', fNo: 'Sadly no', fCount: 'Number of guests', fBaby: 'Baby chairs needed', fSide: 'Guest of', fGroom: 'The groom', fBride: 'The bride', fFriday: 'Joining us at home on Friday evening?', fFriYes: 'Yes', fFriNo: 'No', submit: 'Submit',
+        rsvpBanner: 'Will you join us?', rsvpL: '良辰已定', rsvpR: '静候佳宾',
+        fName: 'Name', fAttend: 'Will you attend?', fYes: 'Joyfully accept', fNo: 'Regretfully decline', fCount: 'Number of guests', fBaby: 'Baby chairs needed', fSide: 'Guest of', fGroom: 'The groom', fBride: 'The bride', fFriday: 'Joining us at home on Friday evening?', fFriYes: 'Yes', fFriNo: 'No', submit: 'Submit',
         deadline: 'Kindly reply by 19 December 2026',
         closing: 'Thank you for being part of our celebration',
         navDate: 'Date', navVenue: 'Venue', navRsvp: 'RSVP',
