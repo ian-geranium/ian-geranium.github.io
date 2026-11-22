@@ -134,11 +134,8 @@
       transition: transform 1.4s cubic-bezier(.7, 0, .2, 1);
     }
     .door.right { background-image: var(--paper), radial-gradient(circle at 0 42%, #8d1d1d, #4c0b0b 75%); }
-    .door::after { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(226, 196, 143, .55); }
     .door.left { left: 0; }
     .door.right { right: 0; }
-    .door.left::after { right: 0; border-right: 0; }
-    .door.right::after { left: 0; border-left: 0; }
     #opening.leave .door.left { transform: translateX(-100%); }
     #opening.leave .door.right { transform: translateX(100%); }
     .tag-wrap {
@@ -225,6 +222,7 @@
     .open-hint::before, .open-hint::after { content: ""; width: 24px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-soft)); }
     .open-hint::after { transform: scaleX(-1); }
     .open-hint span { text-align: center; padding-left: 4px; }   /* both lines centred; the padding balances the letter-spacing after the last character */
+    .sound-hint { font-size: 10.5px; letter-spacing: 3px; padding-left: 3px; color: rgba(226, 196, 143, .55); }   /* reminder: the music starts when the seal is tapped */
     .open-hint small { display: block; font-family: var(--en); font-size: 9.5px; letter-spacing: 4px; color: rgba(226, 196, 143, .8); text-align: center; margin-top: 2px; }
     /* shown after a few seconds if nobody has opened the invitation yet */
     .tap-hand {
@@ -268,11 +266,6 @@
     .stamp span:first-child { background: var(--wine); color: var(--ivory); font-size: 13px; font-weight: 600; padding: 2px 8px; letter-spacing: 2px; }
     .stamp span:last-child { font-family: var(--en); font-size: 8px; letter-spacing: 2px; color: var(--wine); }
     .arch-wrap { position: relative; width: 86%; margin: 0 auto; }
-    .arch-wrap .ghost {
-      position: absolute; left: -14%; right: -14%; top: 52%; z-index: 0;
-      font-family: var(--en); font-weight: 700; font-size: 74px; letter-spacing: 6px; line-height: 1;
-      color: transparent; -webkit-text-stroke: 1px rgba(154, 42, 36, .35);
-    }
     .arch-back { position: absolute; inset: -12px; border: 1px solid var(--gold); border-radius: 999px 999px 0 0; }
     .arch { position: relative; aspect-ratio: 3 / 4; border-radius: 999px 999px 0 0; overflow: hidden;
       box-shadow: 0 0 0 5px var(--ivory), 0 0 0 6px var(--gold); }
@@ -407,11 +400,11 @@
     .bloom-head { padding: 8px 22px 22px; }
     .bloom-head .banner { margin-bottom: 0; font-size: 18px; letter-spacing: 1px; }
     .countdown .frame { aspect-ratio: 4 / 5; }
-    .script-bg { position: absolute; z-index: -1; left: 50%; top: 27px; translate: -50% 0; rotate: -6deg;
+    .script-bg { position: absolute; z-index: -1; left: 50%; top: 7px; translate: -50% 0; rotate: -6deg; padding: 20px 24px 30px;   /* padding holds the W's lead-in stroke and the g's tail inside the box */
       font-family: var(--script); font-size: min(128px, 31vw); line-height: 1; white-space: nowrap; color: rgba(122, 23, 23, .16); pointer-events: none; user-select: none; }
-    /* the write reveal clips to the box, but the script's swashes reach past it: open the clip wider once shown */
-    .script-bg[data-reveal="write"] { clip-path: inset(-40px 100% -40px 0); }
-    .script-bg[data-reveal="write"].in { clip-path: inset(-40px -60px -40px -60px); }
+    /* the write reveal wipes the word in from left to right */
+    .script-bg[data-reveal="write"] { clip-path: inset(0 100% 0 0); }
+    .script-bg[data-reveal="write"].in { clip-path: inset(0); }   /* no negative insets: Safari clips them to the box */
     .count-row { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 24px 0 14px; }
     .countdown .count-row { margin-top: 136px; }   /* room for the script word above the boxes, with space above and below it */
     .count-row .hearts { font-size: 16px; }
@@ -465,8 +458,8 @@
     #rsvp-status.error { color: #b00020; }
 
     /* ---------- 10. closing ---------- */
-    .closing { padding-top: 110px; padding-bottom: 120px; }
-    .closing .floral.br { bottom: -46px; }   /* sits right on the bottom bar, no gap underneath */
+    .closing { padding-top: 110px; padding-bottom: 90px; }
+    .closing .floral.br { bottom: -46px; width: 38%; }   /* sits right on the bottom bar, no gap underneath; a little smaller so it clears the last line */
     .closing .ring { width: 170px; height: 170px; margin-bottom: 26px; }
 
     /* ---------- bottom nav ---------- */
@@ -576,6 +569,7 @@
     </div>
     <div class="open-area" id="open-area">
       <div class="open-hint"><span>点击印章开启请柬<small>TAP THE SEAL TO OPEN</small></span></div>
+      <div class="sound-hint">♪ 请打开声音 · SOUND ON</div>
     </div>
   </div>
 
@@ -608,7 +602,6 @@
         <span class="big" data-i18n="heroR">赴宴</span>
       </div>
       <div class="arch-wrap" data-reveal="zoom">
-        <div class="ghost" aria-hidden="true">MARRIED</div>
         <div class="arch-back"></div>
         <div class="side-hearts" aria-hidden="true">♥<br>♥<br>♥</div>
         <div class="arch"><img src="images/cover.jpg" alt="沈旨軒与钟芷盈的婚纱照"></div>
@@ -843,9 +836,7 @@
       <img class="poem-zh" src="images/poem-zh.png" alt="执芷之手 ♥ 与旨偕老" data-reveal="write" loading="lazy">
       <hr class="divider dots" data-reveal="grow">
       <div class="date-gold" data-reveal="up"><i>◆</i>2027.01.23<i>◆</i></div>
-      <p class="body-text" style="margin-top:18px" data-reveal="lines" data-i18n="closing">感谢你成为我们幸福时刻的一部分，
-1 月 23 日，怡保见！</p>
-      <p class="caps" style="margin-top:10px; white-space:pre-line" data-i18n="namesFull">沈旨軒 & 钟芷盈</p>
+      <p class="body-text" style="margin-top:18px" data-reveal="lines" data-i18n="closing">感谢你成为我们幸福时刻的一部分</p>
     </section>
   </main>
 
@@ -874,7 +865,7 @@
 
     const translations = {
       zh: {
-        namesShort: '沈旨軒 & 钟芷盈', brideName: '钟芷盈', groomName: '沈旨軒', namesFull: '沈旨軒 & 钟芷盈',
+        namesShort: '沈旨軒 & 钟芷盈', brideName: '钟芷盈', groomName: '沈旨軒',
         almDow: '星期六', almLunar: '腊月十六',
         dY: '年', dM: '月', dD: '日',
         heroL: '请你', heroStamp: '来喝喜酒啦', heroR: '赴宴', heroBig: '吾家有喜', heroYi: '宜嫁娶',
@@ -892,14 +883,14 @@
         rsvpBanner: '家有喜事 · 恭候光临', rsvpL: '良辰已定', rsvpR: '静候佳宾',
         fName: '姓名', fAttend: '是否出席', fYes: '欣然赴约', fNo: '遗憾缺席', fCount: '出席人数', fBaby: '需要几张婴儿椅', fSide: '来自哪一方', fGroom: '男方亲友', fBride: '女方亲友', fFriday: '星期五晚上会来家里吗', fFriYes: '一定来', fFriNo: '来不了', submit: '提交',
         deadline: '敬请于 2026 年 12 月 19 日前回复',
-        closing: '感谢你成为我们幸福时刻的一部分，\n1 月 23 日，怡保见！',
+        closing: '感谢你成为我们幸福时刻的一部分',
         navDate: '婚礼时间', navVenue: '婚宴地点', navRsvp: '回复出席',
         dow: ['日', '一', '二', '三', '四', '五', '六'],
         msgNeedName: '请填写姓名', msgBadName: '请填写正确的名字', msgBadCount: '人数请填 1 到 50', msgBadBaby: '婴儿椅请填 0 到 10', msgNeedSide: '请选择男方或女方', msgNeedFriday: '请选择星期五会不会来', msgSending: '提交中…', msgDone: '收到啦，谢谢你的回复！', msgFail: '提交失败，请检查网络后再试',
         msgNotSet: 'RSVP 表单还没设置好',
       },
       en: {
-        namesShort: 'Ian & Geranium', brideName: 'Geranium Cheng', groomName: 'Ian Shum', namesFull: 'Ian Shum Ci-Hin\n&\nGeranium Cheng Zhi Ying',
+        namesShort: 'Ian & Geranium', brideName: 'Geranium Cheng', groomName: 'Ian Shum',
         almDow: 'Saturday', almLunar: 'Lunar 12/16',
         dY: 'YEAR', dM: 'MON', dD: 'DAY',
         heroL: 'Join', heroStamp: 'our wedding', heroR: 'Us', heroBig: 'Joyful News', heroYi: 'Wedding Day',
@@ -917,7 +908,7 @@
         rsvpBanner: 'We\'d love to have you there', rsvpL: '良辰已定', rsvpR: '静候佳宾',
         fName: 'Name', fAttend: 'Will you attend?', fYes: 'Joyfully yes', fNo: 'Sadly no', fCount: 'Number of guests', fBaby: 'Baby chairs needed', fSide: 'Guest of', fGroom: 'The groom', fBride: 'The bride', fFriday: 'Joining us at home on Friday evening?', fFriYes: 'Yes', fFriNo: 'No', submit: 'Submit',
         deadline: 'Kindly reply by 19 December 2026',
-        closing: 'Thank you for being part of our celebration.\nSee you in Ipoh on 23 January!',
+        closing: 'Thank you for being part of our celebration',
         navDate: 'Date', navVenue: 'Venue', navRsvp: 'RSVP',
         dow: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
         msgNeedName: 'Please enter your name', msgBadName: 'Please enter a valid name', msgBadCount: 'Please enter 1 to 50 guests', msgBadBaby: 'Please enter 0 to 10 baby chairs', msgNeedSide: 'Please choose the groom or the bride', msgNeedFriday: 'Please let us know about Friday', msgSending: 'Sending…', msgDone: 'Got it, thank you!', msgFail: 'Could not send. Please check your connection and try again',
