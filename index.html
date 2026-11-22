@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">   <!-- keep the invitation out of search results; the link still works -->
+  <title>沈旨軒 & 钟芷盈｜婚礼邀请</title>
+  <meta name="description" content="2027.01.23 · 怡保 · 诚邀你来喝喜酒">
+  <meta name="theme-color" content="#7a1717">
+  <!-- Link preview (WhatsApp etc). Must be full URLs; change them if the repo name changes. -->
+  <meta property="og:title" content="沈旨軒 & 钟芷盈｜婚礼邀请">
+  <meta property="og:description" content="2027.01.23 · 怡保 · 诚邀你来喝喜酒">
+  <meta property="og:image" content="https://ian-geranium.github.io/images/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://ian-geranium.github.io/">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=La+Belle+Aurore&family=Long+Cang&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --wine: #7a1717;
+      --wine-deep: #5a0f0f;
+      --wine-soft: #9a2a24;
+      --cream: #f1e4cb;
+      --ivory: #fbf4e6;
+      --gold: #c79a52;
+      --gold-soft: #e2c48f;
+      --ink: #4a1512;
+      --muted: #8a5a4a;
+      --zh: "Noto Serif SC", "Songti SC", "STSong", "SimSun", "Noto Serif CJK SC", serif;
+      --en: "Playfair Display", Georgia, "Times New Roman", serif;
+      --hand-zh: "Long Cang", "Noto Serif SC", cursive;   /* handwriting, only for the letter greeting and sign-off */
+      --hand-en: "La Belle Aurore", cursive;
+      --script: "Monsieur La Doulaise", cursive;   /* the big pale "Wedding" behind the countdown */
+      --gold-text: #a8742f;
+      --paper:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .28 0 0 0 0 .12 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+        repeating-linear-gradient(0deg, rgba(122, 80, 40, .05) 0 1px, transparent 1px 5px);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); font-family: var(--zh); font-size: 15px; line-height: 1.9;
+      background: var(--wine-deep);
+      background-image: radial-gradient(circle at 50% 0, #7a1a1a 0, var(--wine-deep) 70%);
+      -webkit-font-smoothing: antialiased; font-variant-numeric: lining-nums;
+    }
+    body.locked { overflow: hidden; }
+    button, input { font: inherit; color: inherit; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+
+    /* ---------- page shell ---------- */
+    .card {
+      position: relative; max-width: 480px; margin: 0 auto; overflow: hidden;
+      background-color: var(--cream); background-image: var(--paper);
+      box-shadow: 0 0 60px rgba(0, 0, 0, .35);
+      padding-bottom: 72px; isolation: isolate;
+    }
+    .card::before { content: ""; position: absolute; inset: 8px; z-index: -1; border: 1px solid rgba(199, 154, 82, .55); pointer-events: none; }
+    section { position: relative; padding: 40px 22px; text-align: center; scroll-margin-top: 10px; }
+    /* bottom-nav targets: land on the content itself, not on the photo above it */
+    .date-info { scroll-margin-top: max(206px, calc((100vh - 150px) / 2)); }   /* the Wedding script above it plus the date block sit roughly centred, clear of the top buttons */
+    .venue-info, .rsvp-info { scroll-margin-top: 66px; }   /* clear of the floating buttons at the top */
+    p { margin: 6px 0; }
+
+    /* ---------- shared pieces ---------- */
+    .banner {
+      display: block; margin: 0 auto 22px; padding: 10px 14px;
+      background: var(--wine); color: var(--ivory);
+      font-weight: 900; font-size: 20px; letter-spacing: 3px; line-height: 1.5;
+      outline: 1px solid rgba(226, 196, 143, .75); outline-offset: -6px;
+      box-shadow: 0 6px 0 -3px rgba(90, 15, 15, .25);
+    }
+    .banner.en-caps { font-family: var(--en); font-size: 15px; letter-spacing: 4px; }
+    .pinyin { font-family: var(--en); font-size: 10px; letter-spacing: 5px; color: var(--wine-soft); text-transform: uppercase; }
+    .caps { font-family: var(--en); letter-spacing: 4px; text-transform: uppercase; font-size: 12px; color: var(--wine); }
+    .hearts { color: var(--wine); letter-spacing: 6px; font-size: 13px; }
+    .sq { display: inline-flex; gap: 3px; }
+    .sq b {
+      display: grid; place-items: center; width: 36px; height: 36px;
+      background: var(--wine); color: var(--ivory); font-weight: 900; font-size: 21px;
+      outline: 1px solid rgba(226, 196, 143, .6); outline-offset: -3px;
+    }
+    .vertical { writing-mode: vertical-rl; letter-spacing: 8px; font-weight: 900; color: var(--wine); font-size: 20px; }
+    .frame { padding: 6px; background: var(--ivory); box-shadow: 0 0 0 1px var(--gold), 0 10px 24px rgba(90, 15, 15, .22); }
+    .frame img { width: 100%; height: 100%; object-fit: cover; }
+    .body-text { font-size: 14px; color: var(--ink); line-height: 2.1; white-space: pre-line; }
+    .greeting { font-family: var(--hand-zh); font-size: 26px; font-weight: 400; color: var(--wine); letter-spacing: 1px; line-height: 1.4; margin: 4px 0 10px; }
+    html[lang="en"] .greeting { font-family: var(--hand-en); font-size: 22px; letter-spacing: 0; }
+    .letter-sign { font-family: var(--hand-zh); font-size: 22px; color: var(--wine); line-height: 1.6; margin-top: 18px; white-space: pre-line; }
+    html[lang="en"] .letter-sign { font-family: var(--hand-en); font-size: 19px; }
+    .letter { line-height: 2; }
+    .subtle { font-size: 13px; color: var(--muted); }
+    .divider { display: block; width: 62%; max-width: 260px; height: auto; aspect-ratio: 583 / 49; margin: 6px auto; border: 0;
+      background: url("images/divider-leaf.png") center / 100% 100% no-repeat; }
+    .divider.dots { width: 46%; max-width: 190px; aspect-ratio: 440 / 21; background-image: url("images/divider-dots.png"); }
+
+    /* ---------- door gift pieces: florals, gold names, script ---------- */
+    .floral { position: absolute; z-index: -1; pointer-events: none; user-select: none; height: auto; }
+    .floral.tl { top: 8px; left: 8px; width: 38%; max-width: 190px; }
+    .floral.tr { top: 8px; right: 8px; width: 38%; max-width: 190px; transform: scaleX(-1); }
+    .floral.br { bottom: 8px; right: 8px; width: 44%; max-width: 215px; }
+    .floral.bl { bottom: 8px; left: 8px; width: 44%; max-width: 215px; transform: scaleX(-1); }
+    .names-zh { display: block; width: 68%; max-width: 250px; height: auto; margin: 0 auto; }
+    .names-script { display: block; width: 98%; max-width: 380px; height: auto; margin: 2px auto; }
+    .poem-zh { display: block; width: 64%; max-width: 240px; height: auto; margin: 4px auto 0; }
+    .date-gold { font-family: var(--en); font-weight: 600; font-size: 15px; letter-spacing: 5px; color: var(--gold-text); }
+    .date-gold i { font-style: normal; font-size: 9px; vertical-align: 2px; margin: 0 10px; }
+
+    /* ---------- falling watercolour petals over the page ---------- */
+    .petal-layer { position: fixed; inset: 0; z-index: 15; pointer-events: none; overflow: hidden; }
+    .petal-layer span {
+      position: absolute; top: -30px; width: 15px; height: 10px; opacity: .85;
+      border-radius: 85% 10% 70% 30% / 70% 10% 85% 30%;
+      background: radial-gradient(circle at 35% 35%, #e57a83, #b5222f 70%, #8f1622);
+      animation: drift linear infinite;
+    }
+    @keyframes drift {
+      0% { transform: translate(0, -30px) rotate(0); }
+      50% { transform: translate(40px, 55vh) rotate(180deg); }
+      100% { transform: translate(-20px, 112vh) rotate(360deg); }
+    }
+
+    /* ---------- opening: doors + floating tag (door gift style) ---------- */
+    #opening { position: fixed; inset: 0; z-index: 50; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; padding: 30px 0; overflow: hidden; }
+    .door {
+      position: absolute; top: 0; bottom: 0; width: 50%;
+      background-color: #4c0b0b; background-image: var(--paper), radial-gradient(circle at 100% 42%, #8d1d1d, #4c0b0b 75%);
+      transition: transform 1.4s cubic-bezier(.7, 0, .2, 1);
+    }
+    .door.right { background-image: var(--paper), radial-gradient(circle at 0 42%, #8d1d1d, #4c0b0b 75%); }
+    .door::after { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(226, 196, 143, .55); }
+    .door.left { left: 0; }
+    .door.right { right: 0; }
+    .door.left::after { right: 0; border-right: 0; }
+    .door.right::after { left: 0; border-left: 0; }
+    #opening.leave .door.left { transform: translateX(-100%); }
+    #opening.leave .door.right { transform: translateX(100%); }
+    .tag-wrap {
+      position: absolute; container-type: inline-size;
+      top: calc(150vh + 14px); left: 50%; width: var(--T); margin-left: calc(var(--T) / -2);
+      filter: drop-shadow(0 6px 10px rgba(30, 0, 0, .35));
+      transition: transform 1s cubic-bezier(.3, .7, .3, 1);
+    }
+    #opening.rise .tag-wrap { transform: translateY(calc(-1 * var(--rise))); }
+    #opening.leave .tag-wrap { transform: translateY(calc(-1 * var(--rise) - 120vh)); opacity: 0;
+      transition: transform 1.2s cubic-bezier(.55, 0, .35, 1), opacity .5s ease .6s; }
+    .tag-wrap::before { content: ""; position: absolute; left: 50%; bottom: calc(100% - 27px); width: 22px; height: 40px; border: 1.5px solid var(--gold-soft); border-bottom: 0; border-radius: 11px 11px 0 0; transform: translateX(-50%); }   /* cord loop through the hole */
+    .tag {
+      position: relative; z-index: 0; isolation: isolate; background: #fcfaf0; text-align: center;
+      clip-path: polygon(24% 0, 76% 0, 100% 13%, 100% 100%, 0 100%, 0 13%);
+      padding: calc(48px + 1cqw) 7cqw 33cqw;
+    }
+    .tag-line { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+    .tag-hole { position: absolute; z-index: 2; top: 14px; left: 50%; width: 26px; height: 26px; margin-left: -13px; border-radius: 50%;
+      background: var(--wine); box-shadow: inset 0 2px 4px rgba(0, 0, 0, .5), 0 0 0 1.5px var(--gold); }
+    .tag .floral { z-index: -1; }
+    .tag .floral.tl { top: 0; left: 0; width: 42%; max-width: none; }
+    .tag .floral.br { bottom: 0; right: 0; width: 54%; max-width: none; }
+    .tag-photo {
+      width: 52cqw; aspect-ratio: 1; margin: 0 auto 4cqw; border-radius: 50%; overflow: hidden;
+      box-shadow: 0 0 0 1.2cqw #fcfaf0, 0 0 0 1.7cqw var(--gold);
+    }
+    .tag-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .tag .names-zh { width: 70cqw; max-width: none; }
+    .tag .names-script { width: 94cqw; max-width: none; margin: 0 -4cqw; }
+    .tag .divider { width: 62cqw; max-width: none; margin: 1.6cqw auto; }
+    .tag .divider.dots { width: 47cqw; }
+    .tag .poem-zh { width: 62cqw; max-width: none; margin: 1.2cqw auto 0; }
+    .tag .date-gold { font-size: 4.4cqw; letter-spacing: 1.5cqw; }
+    .tag .date-gold i { font-size: 2.6cqw; margin: 0 2.6cqw; }
+
+    /* ---------- envelope: closed with a wax seal; the tag slides out once the seal is tapped ---------- */
+    #opening { --W: min(92vw, 400px); --T: calc(var(--W) * .78); }
+    .env-scene { position: relative; z-index: 2; width: var(--W); height: calc(var(--W) * .6); transition: transform 1s cubic-bezier(.3, .7, .3, 1); }
+    #opening.rise .env-scene { transform: translateY(var(--sink)); }   /* moves down so the tag and envelope sit centred */
+    .env-back { position: absolute; inset: 0; background: #651111; box-shadow: 0 18px 30px rgba(20, 0, 0, .5); transition: opacity .5s ease; }
+    .env-flap {   /* the open flap's lining, standing up behind the tag */
+      position: absolute; left: 0; right: 0; bottom: calc(100% - 1px); height: calc(var(--W) * .5);
+      background: var(--gold); clip-path: polygon(0 100%, 50% 0, 100% 100%);
+      transform: scaleY(0); transform-origin: bottom; transition: transform .25s ease-out .45s, opacity .5s ease;
+    }
+    .env-flap::before { content: ""; position: absolute; inset: 0; background-color: #f1e4cb; background-image: var(--paper); clip-path: polygon(2.2% 100%, 50% 3.4%, 97.8% 100%); }
+    #opening.open .env-flap { transform: scaleY(1); }
+    .env-flap-closed {   /* folds up first; the lining above then takes its place */
+      position: absolute; z-index: 3; inset: 0; pointer-events: none;
+      background: url("images/env-flap.svg") 0 0 / 100% 100% no-repeat;
+      transform-origin: top; transition: transform .25s ease-in .2s;
+    }
+    #opening.open .env-flap-closed { transform: perspective(700px) rotateX(90deg); }
+    .tag-slot { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; top: -150vh; overflow: hidden; pointer-events: none; }   /* hides the tag below the envelope's bottom edge */
+    .env-front {   /* two halves, so the envelope parts like the doors behind it; one picture spread over both */
+      position: absolute; z-index: 2; top: 0; bottom: 0; width: 50%;
+      background: url("images/env-front.svg") 0 0 / 200% 100% no-repeat; box-shadow: 0 -8px 14px -6px rgba(30, 0, 0, .45);
+      clip-path: inset(-30px 0 0 0);   /* keep the top shadow, but not the sideways spill onto the other half */
+      transition: transform 1.4s cubic-bezier(.7, 0, .2, 1);
+    }
+    .env-front.left { left: 0; }
+    .env-front.right { right: 0; width: calc(50% + 1px); background-position: 100% 0; background-size: calc(200% - 2px) 100%; }   /* 1px overlap hides the hairline between the halves */
+    #opening.leave .env-front.left { transform: translateX(-100vw); }
+    #opening.leave .env-front.right { transform: translateX(100vw); }
+    #opening.leave .env-back, #opening.leave .env-flap { opacity: 0; }
+    .open-area { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 12px; transition: opacity .5s; }
+    #opening.open .open-area { opacity: 0; pointer-events: none; }
+    .open-btn {   /* gold wax seal on the envelope: the 囍 is part of the picture, the text stays for screen readers */
+      position: absolute; z-index: 4; left: 50%; top: 58%; translate: -50% -50%;   /* on the closed flap's tip */
+      width: 84px; height: 84px; border-radius: 50%; border: 0; padding: 0; cursor: pointer;
+      background: url("images/wax-seal.png") center / contain no-repeat; color: transparent; font-size: 0;
+      transition: scale .45s ease, opacity .45s ease;
+    }
+    #opening.open .open-btn { scale: 1.35; opacity: 0; }   /* the seal breaks first */
+    #opening.open.nudge .tap-hand, #opening.open .tap-hand { opacity: 0; animation: none; }
+    .open-btn::before, .open-btn::after {
+      content: ""; position: absolute; inset: -2px; border-radius: 50%; border: 1.5px solid var(--gold-soft);
+      animation: ripple 2.4s ease-out infinite; pointer-events: none;
+    }
+    .open-btn::after { animation-delay: 1.2s; }
+    @keyframes ripple { from { transform: scale(1); opacity: .8; } to { transform: scale(1.75); opacity: 0; } }
+    .open-hint { display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: 4px; color: var(--gold-soft); line-height: 1.4; }
+    .open-hint::before, .open-hint::after { content: ""; width: 24px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-soft)); }
+    .open-hint::after { transform: scaleX(-1); }
+    .open-hint span { text-align: center; padding-left: 4px; }   /* both lines centred; the padding balances the letter-spacing after the last character */
+    .open-hint small { display: block; font-family: var(--en); font-size: 9.5px; letter-spacing: 4px; color: rgba(226, 196, 143, .8); text-align: center; margin-top: 2px; }
+    /* shown after a few seconds if nobody has opened the invitation yet */
+    .tap-hand {
+      position: absolute; z-index: 5; top: calc(58% + 10px); left: 50%; width: 36px; height: 36px; margin-left: 12px;
+      color: #fff4dc; opacity: 0; pointer-events: none; transition: opacity .4s;
+      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .45));
+    }
+    #opening.nudge .tap-hand { opacity: 1; animation: tap 1.2s ease-in-out infinite; }
+    #opening.nudge .open-hint { animation: glow 1.2s ease-in-out infinite; }
+    @keyframes tap { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-7px, -9px) scale(.9); } }
+    @keyframes glow { 50% { color: #fff4dc; text-shadow: 0 0 10px rgba(255, 220, 150, .8); } }
+
+    /* ---------- floating controls ---------- */
+    .controls { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); width: min(100%, 480px); z-index: 20;
+      display: flex; justify-content: space-between; padding: 0 12px; pointer-events: none; }
+    .controls > * { pointer-events: auto; }
+    .languages { display: flex; background: rgba(251, 244, 230, .88); border: 1px solid var(--gold); border-radius: 20px; padding: 2px; }
+    .languages button { border: 0; background: transparent; padding: 2px 10px; font-size: 12px; border-radius: 16px; cursor: pointer; color: var(--wine); }
+    .languages button[aria-pressed="true"] { background: var(--wine); color: var(--ivory); }
+    #music {
+      width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--gold); cursor: pointer;
+      background: var(--wine); color: var(--gold-soft); font-size: 17px; display: grid; place-items: center;
+    }
+    .controls-right { display: flex; gap: 8px; }
+    #auto {
+      width: 38px; height: 38px; padding: 0; border-radius: 50%; border: 1px solid var(--gold); cursor: pointer;
+      background: var(--wine); color: var(--gold-soft); display: grid; place-items: center;
+    }
+    #auto svg { width: 15px; height: 15px; }
+    #auto .icon-pause, #auto[aria-pressed="true"] .icon-play { display: none; }
+    #auto[aria-pressed="true"] .icon-pause { display: block; }
+    #music.playing { animation: spin 4s linear infinite; }
+    #music:not(.playing)::after { content: ""; position: absolute; width: 26px; height: 1.5px; background: var(--gold-soft); transform: rotate(-45deg); }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ---------- 1. hero ---------- */
+    .hero { padding-top: 64px; }
+    .hero-title { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 18px; }
+    .hero-title .big { font-size: 46px; font-weight: 900; color: var(--wine); letter-spacing: 2px; line-height: 1; }
+    .stamp { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+    .stamp span:first-child { background: var(--wine); color: var(--ivory); font-size: 13px; font-weight: 600; padding: 2px 8px; letter-spacing: 2px; }
+    .stamp span:last-child { font-family: var(--en); font-size: 8px; letter-spacing: 2px; color: var(--wine); }
+    .arch-wrap { position: relative; width: 86%; margin: 0 auto; }
+    .arch-wrap .ghost {
+      position: absolute; left: -14%; right: -14%; top: 52%; z-index: 0;
+      font-family: var(--en); font-weight: 700; font-size: 74px; letter-spacing: 6px; line-height: 1;
+      color: transparent; -webkit-text-stroke: 1px rgba(154, 42, 36, .35);
+    }
+    .arch-back { position: absolute; inset: -12px; border: 1px solid var(--gold); border-radius: 999px 999px 0 0; }
+    .arch { position: relative; aspect-ratio: 3 / 4; border-radius: 999px 999px 0 0; overflow: hidden;
+      box-shadow: 0 0 0 5px var(--ivory), 0 0 0 6px var(--gold); }
+    .arch img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+    .side-hearts { position: absolute; left: -32px; top: 24%; display: flex; flex-direction: column; gap: 6px; color: var(--wine); font-size: 12px; }
+    .hero-script { margin-top: 26px; }
+    /* same box as the ian & Geranium lettering above: text starts where the lettering starts, calendar ends where it ends */
+    .hero-foot {
+      display: grid; grid-template-columns: auto auto; justify-content: space-between; align-items: end; gap: 6px 12px; text-align: left;
+      width: min(98%, 380px); margin: 10px auto 0; padding: 0 calc(min(98%, 380px) * .01) 0 calc(min(98%, 380px) * .03);
+    }
+    .hero-foot .big { font-size: 40px; font-weight: 900; color: var(--wine); line-height: 1.15; letter-spacing: 2px; }
+    .date-blocks { display: flex; align-items: center; gap: 6px; }
+    .date-blocks span {
+      display: flex; flex-direction: column; align-items: center; background: var(--wine); color: var(--ivory); padding: 5px 10px 3px;
+      outline: 1px solid rgba(226, 196, 143, .75); outline-offset: -4px; line-height: 1.1;
+    }
+    .date-blocks span:first-child { padding: 5px 12px 3px; }
+    .date-blocks b { font-family: var(--en); font-weight: 700; font-size: 20px; letter-spacing: 1px; }
+    .date-blocks i { font-style: normal; font-size: 10px; color: var(--gold-soft); letter-spacing: 2px; margin-top: 2px; }
+    .date-blocks em { font-style: normal; font-size: 9px; color: var(--gold-text); }
+    .hero-left-bottom { display: inline-flex; flex-direction: column; align-items: stretch; }
+    /* almanac card: never taller than the left block */
+    .almanac {
+      grid-column: 2; grid-row: 1 / span 2; align-self: center; position: relative; width: 76px; text-align: center;
+      background: var(--ivory); box-shadow: 0 0 0 1px var(--gold), 0 6px 12px rgba(90, 15, 15, .16); padding-bottom: 5px; margin-top: 6px;
+    }
+    .almanac::before, .almanac::after {   /* calendar rings */
+      content: ""; position: absolute; top: -5px; width: 6px; height: 10px; border-radius: 3px; background: var(--gold); box-shadow: inset 0 0 0 1.5px #a8742f;
+    }
+    .almanac::before { left: 18px; }
+    .almanac::after { right: 18px; }
+    .almanac-top { background: var(--wine); color: var(--gold-soft); font-family: var(--en); font-size: 8.5px; letter-spacing: 1.5px; padding: 3px 0 1px; line-height: 1.4; }
+    .almanac-day { font-family: var(--en); font-weight: 700; font-size: 27px; line-height: 1; color: var(--wine); margin-top: 3px; }
+    .almanac-dow { font-size: 10px; color: var(--muted); letter-spacing: 1px; line-height: 1.4; margin-top: 1px; }
+    .almanac-lunar { font-size: 10px; color: var(--ink); letter-spacing: 1px; line-height: 1.4; border-top: 1px dashed rgba(122, 23, 23, .3); margin: 2px 8px 0; padding-top: 2px; white-space: nowrap; }
+    .almanac-yi {
+      display: inline-block; margin-top: 4px; padding: 1px 5px; background: var(--wine); color: var(--ivory);
+      font-weight: 900; font-size: 11.5px; letter-spacing: 2px; line-height: 1.6; transform: rotate(-6deg);
+      outline: 1px solid rgba(226, 196, 143, .7); outline-offset: -3px;
+    }
+    html[lang="en"] .almanac-day { font-size: 24px; }
+    html[lang="en"] .almanac-lunar { letter-spacing: 0; font-size: 9px; }
+    html[lang="en"] .almanac-yi { font-size: 8px; letter-spacing: 0; padding: 1px 4px; }
+    .hero-foot .pinyin { white-space: nowrap; }
+    html[lang="en"] .hero-foot .big { font-size: 30px; letter-spacing: 0; }
+    html[lang="en"] .couple-names .name { font-size: 16px; letter-spacing: 0; }
+    html[lang="en"] .intro h2 { font-size: 25px; letter-spacing: 1px; }
+    html[lang="en"] .banner:not(.en-caps) { letter-spacing: .5px; }
+
+    /* ---------- 2. intro ---------- */
+    .intro { padding-top: 150px; padding-bottom: 150px; }
+    .intro .floral.tl { width: 34%; }
+    .intro h2 { margin: 2px 0 4px; font-size: 32px; font-weight: 900; color: var(--wine); letter-spacing: 6px; }
+    .ring { position: relative; width: 230px; height: 230px; margin: 24px auto 18px; }
+    .ring::before { content: ""; position: absolute; inset: -16px; border-radius: 50%;
+      background: radial-gradient(circle, var(--gold) 1.6px, transparent 2px) 0 0 / 11px 11px;
+      -webkit-mask: radial-gradient(circle, transparent 62%, #000 63%, #000 70%, transparent 71%);
+              mask: radial-gradient(circle, transparent 62%, #000 63%, #000 70%, transparent 71%); }
+    .ring img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+      box-shadow: 0 0 0 5px var(--ivory), 0 0 0 7px var(--wine); }
+    .couple-names { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; margin: 8px 0 20px; }
+    .couple-names .role { font-family: var(--en); font-size: 11px; letter-spacing: 4px; color: var(--wine-soft); }
+    .couple-names .name { font-size: 19px; font-weight: 900; color: var(--wine); letter-spacing: 3px; }
+    .couple-names .heart { color: var(--wine); font-size: 18px; }
+
+    /* ---------- 3. news ---------- */
+    .news .banner { font-size: 16px; letter-spacing: 1px; }
+    html[lang="en"] .news .banner { font-size: 15px; }   /* keeps the English line on one row down to 360px phones */
+    .wide { aspect-ratio: 3 / 2; }
+    .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; text-align: left; align-items: start; }
+    .extra { display: grid; grid-template-columns: auto 1fr; gap: 8px; align-items: center; background: var(--wine); color: var(--ivory); padding: 10px; }
+    .extra b { font-size: 26px; line-height: 1.05; writing-mode: vertical-rl; letter-spacing: 2px; }
+    .extra-names { display: flex; flex-direction: column; align-items: center; text-align: center; font-family: var(--en); line-height: 1.2; }
+    .extra-names small { font-size: 7px; letter-spacing: 2px; color: var(--gold-soft); opacity: .85; margin-bottom: 4px; white-space: nowrap; }
+    .extra-names em { font-style: italic; font-weight: 500; font-size: 16px; color: var(--ivory); letter-spacing: .5px; }
+    .extra-names i {
+      display: flex; align-items: center; gap: 6px; align-self: stretch; margin: 1px 0;
+      font-style: italic; font-size: 15px; color: var(--gold-soft); line-height: 1;
+    }
+    .extra-names i::before, .extra-names i::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-soft)); }
+    .extra-names i::after { transform: scaleX(-1); }
+    .news-grid .body-text { margin: 14px 0; font-size: 13px; }
+    .tall { aspect-ratio: 2 / 3; }
+
+    /* ---------- 4. pun ---------- */
+    .pun-top, .pun-bottom { display: flex; justify-content: space-between; align-items: center; }
+    .pun-top { margin-bottom: 14px; }
+    .pun-bottom { margin-top: 14px; }
+    .pun .frame { aspect-ratio: 4 / 5; }
+    .pun .body-text { margin-top: 18px; }
+
+    /* ---------- 5. fate ---------- */
+    .fate-grid { display: grid; grid-template-columns: 96px 1fr; gap: 14px; align-items: start; }
+    .fate-side { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .fate-side .sq { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+    .fate-side .sq b { width: 42px; height: 42px; font-size: 24px; }
+    .fate-side .poem { display: flex; gap: 10px; }   /* read left to right, same as the red squares */
+    .fate-side .poem .vertical { font-size: 15px; letter-spacing: 9px; font-weight: 600; }
+    .fate .frame { aspect-ratio: 2 / 3; }
+    .fate .banner { margin-top: 22px; font-size: 17px; letter-spacing: 1px; }
+    .note-box { border: 1px solid var(--wine); outline: 1px solid var(--wine); outline-offset: 3px; padding: 14px 16px; margin: 0 6px; }
+
+    /* ---------- 6. bloom (full photo + petals + calendar) ---------- */
+    .bloom { padding: 0; height: 640px; overflow: hidden; background: var(--wine); }
+    .bloom > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .bloom::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, transparent 55%, rgba(90, 15, 15, .45)); }
+    .petals { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+    .petal { position: absolute; top: -20px; width: 11px; height: 9px; border-radius: 150% 0 150% 0; opacity: .9;
+      animation: fall linear infinite; }
+    @keyframes fall {
+      0% { transform: translate(0, -20px) rotate(0); }
+      50% { transform: translate(28px, 330px) rotate(200deg); }
+      100% { transform: translate(-12px, 680px) rotate(400deg); }
+    }
+    .calendar {
+      position: absolute; z-index: 3; left: 11%; right: 11%; top: 26px;
+      background: rgba(251, 244, 230, .82); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+      padding: 14px 16px 12px; box-shadow: 0 0 0 1px var(--gold);
+    }
+    .calendar .month { font-family: var(--en); font-weight: 700; font-size: 26px; color: var(--wine); letter-spacing: 2px; line-height: 1.2; }
+    .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px 0; margin-top: 8px; font-family: var(--en); font-size: 12px; color: var(--ink); }
+    .cal-grid .dow { font-family: var(--zh); font-size: 11px; color: var(--wine-soft); }
+    .cal-grid span { display: grid; place-items: center; height: 22px; }
+    .cal-grid .day-mark { color: var(--wine); position: relative; z-index: 0; font-weight: 900; font-size: 15px; }
+    .cal-grid .day-mark::before {   /* hand-drawn red heart around the 23rd */
+      content: ""; position: absolute; z-index: -1; left: 50%; top: 50%; width: 46px; height: 33px; transform: translate(-50%, -46%) rotate(-4deg);
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 46'%3E%3Cpath d='M33 12C29 4 11 1 6 12c-4 10 9 20 26 31c17-11 30-21 26-31C54 1 37 3 31 10c-1 1.5-1.5 2.5-2.2 3.8' fill='none' stroke='%23b3201e' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+    }
+
+    /* ---------- 7. countdown ---------- */
+    .bloom-head { padding: 8px 22px 22px; }
+    .bloom-head .banner { margin-bottom: 0; font-size: 18px; letter-spacing: 1px; }
+    .countdown .frame { aspect-ratio: 4 / 5; }
+    .script-bg { position: absolute; z-index: -1; left: 50%; top: 27px; translate: -50% 0; rotate: -6deg;
+      font-family: var(--script); font-size: min(128px, 31vw); line-height: 1; white-space: nowrap; color: rgba(122, 23, 23, .16); pointer-events: none; user-select: none; }
+    /* the write reveal clips to the box, but the script's swashes reach past it: open the clip wider once shown */
+    .script-bg[data-reveal="write"] { clip-path: inset(-40px 100% -40px 0); }
+    .script-bg[data-reveal="write"].in { clip-path: inset(-40px -60px -40px -60px); }
+    .count-row { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 24px 0 14px; }
+    .countdown .count-row { margin-top: 136px; }   /* room for the script word above the boxes, with space above and below it */
+    .count-row .hearts { font-size: 16px; }
+    .count-box { width: 56px; background: var(--wine); color: var(--ivory); padding: 6px 0 4px; outline: 1px solid rgba(226, 196, 143, .6); outline-offset: -3px; }
+    .count-box strong { display: block; font-family: var(--en); font-size: 24px; line-height: 1.1; }
+    .count-box small { font-size: 11px; color: var(--gold-soft); }
+    .when { font-size: 17px; font-weight: 600; color: var(--wine); letter-spacing: 2px; }
+    .times { display: grid; grid-template-columns: 1fr 1fr; max-width: 300px; margin: 18px auto 0; }
+    .times > div + div { border-left: 1px solid rgba(122, 23, 23, .35); }
+    .times time { display: block; font-family: var(--en); font-size: 22px; font-weight: 700; color: var(--wine); line-height: 1.5; }
+    .times span { font-size: 13px; }
+    .eve-note { max-width: 300px; margin: 22px auto 0; padding-top: 14px; border-top: 1px dashed rgba(122, 23, 23, .3); font-size: 13px; line-height: 1.9; color: var(--muted); white-space: pre-line; }
+
+    /* ---------- 8. venue ---------- */
+    .venue .frame.wide { margin-top: 6px; }
+    .venue .banner { margin-top: 22px; font-size: 17px; letter-spacing: 1px; }
+    .love-line { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .love-line i { font-family: var(--en); font-size: 13px; color: var(--wine); }
+    .map-row { display: grid; grid-template-columns: 28px 1fr 28px; gap: 10px; align-items: center; }
+    .map-row .vertical { font-size: 17px; letter-spacing: 10px; }
+    .map { aspect-ratio: 4 / 3; padding: 5px; }
+    .map iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .venue-name { margin-top: 18px; font-size: 22px; font-weight: 900; color: var(--wine); letter-spacing: 3px; }
+    .venue-name .hall { margin-left: 8px; font-family: var(--en); font-weight: 700; font-size: 20px; letter-spacing: 1px; }
+    .venue-en { font-family: var(--en); font-style: italic; font-size: 13px; color: var(--muted); }
+    .buttons { display: flex; justify-content: center; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 9px 20px; border: 1px solid var(--wine); background: transparent; color: var(--wine);
+      text-decoration: none; font-size: 13px; letter-spacing: 1px; cursor: pointer;
+    }
+    .btn.solid { background: var(--wine); color: var(--ivory); }
+
+    /* ---------- 9. rsvp ---------- */
+    .rsvp .frame { aspect-ratio: 4 / 5; }
+    .rsvp-grid { display: grid; grid-template-columns: 28px 1fr 28px; gap: 10px; align-items: center; margin-top: 24px; }
+    .rsvp-grid .vertical { font-size: 17px; letter-spacing: 10px; }
+    form { display: flex; flex-direction: column; gap: 10px; text-align: left; }
+    .field label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 3px; }
+    #attend-fields .field + .field { margin-top: 10px; }   /* same gap as the form's own fields */
+    .field input[type="text"], .field input[type="number"] {
+      width: 100%; padding: 9px 12px; border: 1px solid rgba(122, 23, 23, .4); background: var(--ivory); color: var(--ink); border-radius: 0;
+    }
+    .choice { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .choice input { position: absolute; opacity: 0; pointer-events: none; }
+    .choice label { display: block; text-align: center; padding: 8px 4px; border: 1px solid rgba(122, 23, 23, .4); background: var(--ivory); cursor: pointer; font-size: 13px; color: var(--ink); margin: 0; }
+    .choice input:checked + label { background: var(--wine); color: var(--ivory); border-color: var(--wine); }
+    .choice input:focus-visible + label { outline: 2px solid var(--gold); outline-offset: 2px; }
+    form .btn { width: 100%; padding: 11px; font-size: 15px; letter-spacing: 4px; }
+    form .btn:disabled { opacity: .6; cursor: default; }
+    #rsvp-status { min-height: 1.6em; font-size: 13px; text-align: center; color: var(--wine); margin: 0; }
+    #rsvp-status.error { color: #b00020; }
+
+    /* ---------- 10. closing ---------- */
+    .closing { padding-top: 110px; padding-bottom: 120px; }
+    .closing .floral.br { bottom: -46px; }   /* sits right on the bottom bar, no gap underneath */
+    .closing .ring { width: 170px; height: 170px; margin-bottom: 26px; }
+
+    /* ---------- bottom nav ---------- */
+    .bottom-nav {
+      position: fixed; left: 50%; bottom: 0; transform: translateX(-50%); width: min(100%, 480px); z-index: 20;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; background: var(--wine); color: var(--ivory);
+      padding: 10px 8px calc(10px + env(safe-area-inset-bottom)); box-shadow: 0 -4px 16px rgba(0, 0, 0, .2);
+    }
+    .bottom-nav a { text-align: center; text-decoration: none; font-size: 13px; letter-spacing: 2px; }
+    .bottom-nav a + a { border-left: 1px solid rgba(226, 196, 143, .4); }
+
+    /* ---------- entrance animations (Video 2 style: one after another) ---------- */
+    [data-reveal] {
+      --d: 0s; opacity: 0;
+      transition: opacity .8s ease var(--d), transform 1s cubic-bezier(.22, .8, .3, 1) var(--d), filter 1s ease var(--d),
+                  clip-path 1.6s ease-in-out var(--d), scale 1.2s cubic-bezier(.22, .8, .3, 1) var(--d);
+    }
+    [data-reveal="up"] { transform: translateY(40px); }
+    [data-reveal="left"] { transform: translateX(-60px); }
+    [data-reveal="right"] { transform: translateX(60px); }
+    /* jump in from the side and bounce back; never further than the element's own width, so part of it stays on the card and the observer still sees it */
+    [data-reveal="jump-left"] { transform: translateX(max(-100%, -140px)); }
+    [data-reveal="jump-right"] { transform: translateX(min(100%, 140px)); }
+    [data-reveal="jump-left"], [data-reveal="jump-right"] { transition-timing-function: ease, cubic-bezier(.34, 1.56, .64, 1); }
+    [data-reveal="drop"] { transform: translateY(-46px); transition-timing-function: ease, cubic-bezier(.34, 1.56, .64, 1); }
+    [data-reveal="zoom"] { transform: scale(.8); filter: blur(12px); }
+    [data-reveal="stamp"] { transform: scale(1.8); }
+    [data-reveal="grow"] { transform: scaleX(0); }
+    [data-reveal="write"] { opacity: 1; clip-path: inset(0 100% 0 0); }
+    [data-reveal="bloom"] { scale: .45; }
+    .floral.tl { transform-origin: top left; }
+    .floral.tr { transform-origin: top right; }
+    .floral.br { transform-origin: bottom right; }
+    .floral.bl { transform-origin: bottom left; }
+    [data-reveal="pop"], [data-reveal="lines"] { opacity: 1; }
+    [data-reveal="pop"] > * {
+      opacity: 0; transform: scale(.2) rotate(-14deg);
+      transition: opacity .5s ease calc(var(--d) + var(--i) * 110ms), transform .7s cubic-bezier(.34, 1.7, .64, 1) calc(var(--d) + var(--i) * 110ms);
+    }
+    [data-reveal="lines"] .line {
+      display: block; opacity: 0; transform: translateY(16px);
+      transition: opacity .7s ease calc(var(--d) + var(--i) * 160ms), transform .8s ease calc(var(--d) + var(--i) * 160ms);
+    }
+    [data-reveal].in { opacity: 1; }
+    [data-reveal="up"].in, [data-reveal="left"].in, [data-reveal="right"].in, [data-reveal="drop"].in,
+    [data-reveal="jump-left"].in, [data-reveal="jump-right"].in,
+    [data-reveal="stamp"].in, [data-reveal="grow"].in { transform: none; }
+    [data-reveal="zoom"].in { transform: none; filter: none; }
+    [data-reveal="write"].in { clip-path: inset(0 0 0 0); }
+    [data-reveal="bloom"].in { scale: 1; }
+    [data-reveal="pop"].in > *, [data-reveal="lines"].in .line { opacity: 1; transform: none; }
+    /* the heart between the names pops up last, after both names have landed */
+    .couple-names .heart[data-reveal]:not(.in) { transform: scale(0); }
+    .couple-names .heart[data-reveal] { transition-timing-function: ease, cubic-bezier(.34, 1.7, .64, 1); }
+    .couple-names .heart.in { transition-delay: calc(var(--d) + .35s); }
+    .no-anim, .no-anim * { transition: none !important; }
+
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal], [data-reveal] * { opacity: 1 !important; transition: none !important; filter: none !important; clip-path: none !important; scale: 1 !important; }
+      [data-reveal]:not(.floral), [data-reveal="pop"] > *, [data-reveal="lines"] .line { transform: none !important; }
+      .petal, #music.playing, .tag-wrap, .petal-layer span, .open-btn::before, .open-btn::after, #opening.nudge .tap-hand, #opening.nudge .open-hint { animation: none; }
+      .petal-layer { display: none; }
+      .door, .tag-wrap, .open-area, .env-scene, .env-front, .env-back, .env-flap, .env-flap-closed, .open-btn { transition-duration: .01s; transition-delay: 0s; }
+    }
+    @media (max-width: 360px) {
+      section { padding: 34px 16px; }
+      .hero-title .big { font-size: 38px; }
+      .hero-foot .big { font-size: 34px; }
+      .count-box { width: 50px; }
+    }
+  </style>
+</head>
+<body class="locked">
+
+  <!-- ===== Opening: doors + floating tag ===== -->
+  <div id="opening">
+    <div class="door left"></div>
+    <div class="door right"></div>
+    <div class="env-scene">
+    <div class="env-back"></div>
+    <div class="env-flap"></div>
+    <div class="tag-slot">   <!-- the tag waits inside the envelope -->
+    <div class="tag-wrap" id="tag">
+      <div class="tag">
+        <svg class="tag-line" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <polygon points="25,1.6 75,1.6 97.6,14.2 97.6,98.6 2.4,98.6 2.4,14.2" fill="none" stroke="#c79a52" stroke-width="1" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <span class="tag-hole" aria-hidden="true"></span>
+        <img class="floral tl" src="images/floral-tl.webp" alt="">
+        <img class="floral br" src="images/floral-br.webp" alt="">
+        <div class="tag-photo"><img src="images/opening.jpg" alt="沈旨軒与钟芷盈"></div>
+        <img class="names-zh" src="images/names-zh.png" alt="旨軒 ♥ 芷盈">
+        <hr class="divider">
+        <img class="names-script" src="images/names-script.png" alt="Ian &amp; Geranium">
+        <img class="poem-zh" src="images/poem-zh.png" alt="执芷之手 ♥ 与旨偕老">
+        <hr class="divider dots">
+        <div class="date-gold"><i>◆</i>2027.01.23<i>◆</i></div>
+      </div>
+    </div>
+    </div>
+    <div class="env-front left"></div>
+    <div class="env-front right"></div>
+    <div class="env-flap-closed"></div>
+    <button class="open-btn" id="open-btn" type="button" aria-label="开启请柬 Open invitation">囍</button>
+    <svg class="tap-hand" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 11.24V7.5C9 6.12 10.12 5 11.5 5S14 6.12 14 7.5v3.74c1.21-.81 2-2.18 2-3.74C16 5.01 13.99 3 11.5 3S7 5.01 7 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H13v-6c0-.83-.67-1.5-1.5-1.5S10 6.67 10 7.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.2 0-.62-.38-1.16-.91-1.38z"/></svg>
+    </div>
+    <div class="open-area" id="open-area">
+      <div class="open-hint"><span>点击印章开启请柬<small>TAP THE SEAL TO OPEN</small></span></div>
+    </div>
+  </div>
+
+  <!-- ===== Floating controls ===== -->
+  <div class="controls">
+    <div class="languages" role="group" aria-label="Language / 语言">
+      <button type="button" data-language="zh" aria-pressed="true">中文</button>
+      <button type="button" data-language="en" aria-pressed="false">EN</button>
+    </div>
+    <div class="controls-right">
+      <button id="auto" type="button" aria-label="自动滚动 Auto scroll" aria-pressed="false">
+        <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+        <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+      </button>
+      <button id="music" type="button" aria-label="背景音乐 Music" aria-pressed="false">♪</button>
+    </div>
+  </div>
+  <!-- Music: to change the song, put an .mp4 or .m4a in the music folder and rename it to music.mp4 -->
+  <audio id="bgm" src="music/music.mp4" loop preload="auto"></audio>
+  <div class="petal-layer" id="petal-layer" aria-hidden="true"></div>
+
+  <main class="card">
+
+    <!-- 1. Hero -->
+    <section class="hero">
+      <span class="banner en-caps" data-reveal="drop">WELCOME TO OUR WEDDING</span>
+      <div class="hero-title" data-reveal="stamp">
+        <span class="big" data-i18n="heroL">请你</span>
+        <span class="stamp"><span data-i18n="heroStamp">来喝喜酒啦</span><span>WE GOT MARRIED</span></span>
+        <span class="big" data-i18n="heroR">赴宴</span>
+      </div>
+      <div class="arch-wrap" data-reveal="zoom">
+        <div class="ghost" aria-hidden="true">MARRIED</div>
+        <div class="arch-back"></div>
+        <div class="side-hearts" aria-hidden="true">♥<br>♥<br>♥</div>
+        <div class="arch"><img src="images/cover.jpg" alt="沈旨軒与钟芷盈的婚纱照"></div>
+      </div>
+      <img class="names-script hero-script" src="images/names-script.png" alt="Ian &amp; Geranium" data-reveal="write">
+      <div class="hero-foot" data-reveal="up">
+        <div>
+          <div class="pinyin">WU · JIA · YOU · XI</div>
+          <div class="big" data-i18n="heroBig">吾家有喜</div>
+        </div>
+        <div class="almanac" aria-label="2027年1月23日 星期六 农历腊月十六 宜嫁娶">
+          <div class="almanac-top">JAN · 2027</div>
+          <div class="almanac-day">23</div>
+          <div class="almanac-dow" data-i18n="almDow">星期六</div>
+          <div class="almanac-lunar" data-i18n="almLunar">腊月十六</div>
+          <div class="almanac-yi" data-i18n="heroYi">宜嫁娶</div>
+        </div>
+        <div class="hero-left-bottom">
+          <div class="date-blocks"><span><b>2027</b><i data-i18n="dY">年</i></span><em>◆</em><span><b>01</b><i data-i18n="dM">月</i></span><em>◆</em><span><b>23</b><i data-i18n="dD">日</i></span></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" data-reveal="grow">
+
+    <!-- 2. Intro -->
+    <section class="intro">
+      <img class="floral tl" src="images/floral-tl.webp" alt="" loading="lazy" data-reveal="bloom">
+      <img class="floral br" src="images/floral-br.webp" alt="" loading="lazy" data-reveal="bloom">
+      <div class="pinyin" data-reveal="up">WO · MEN · JIE · HUN · LA</div>
+      <h2 data-reveal="up"><span data-i18n="introTitle">我们结婚啦</span> <span class="hearts">♥♥♥</span></h2>
+      <div class="ring" data-reveal="zoom"><img src="images/couple.jpg" alt="新郎新娘合照"></div>
+      <div class="couple-names">
+        <div data-reveal="jump-left"><div class="role">· BRIDE ·</div><div class="name" data-i18n="brideName">钟芷盈</div></div>
+        <div class="heart" data-reveal="stamp">♥</div>
+        <div data-reveal="jump-right"><div class="role">· GROOM ·</div><div class="name" data-i18n="groomName">沈旨軒</div></div>
+      </div>
+      <p class="greeting" data-reveal="up" data-i18n="introHi">HI~亲爱的家人朋友们</p>
+      <p class="body-text letter" data-reveal="lines" data-i18n="introText">当我们写下这封邀请的时候
+才发现
+这不只是一张婚礼请柬
+更是写给每一位
+陪我们走过这些年的你们
+因为有你们，才有今天的我们
+所以下一段路的第一步
+也想请你们在场</p>
+      <p class="letter-sign" data-reveal="up" data-i18n="introSign">这杯喜酒, 敬过去的陪伴
+也敬往后的日子</p>
+    </section>
+
+    <!-- 3. News -->
+    <section class="news">
+      <span class="banner" data-reveal="drop" data-i18n="newsBanner">沈家那小子和钟家那姑娘结婚啦！</span>
+      <div class="frame wide" data-reveal="zoom"><img src="images/wave.jpg" alt="新郎新娘挥手" loading="lazy"></div>
+      <p class="caps" style="margin-top:20px" data-reveal="up">OUR SWEET WEDDING</p>
+      <div class="news-grid">
+        <div data-reveal="jump-left">
+          <div class="extra"><b data-i18n="newsExtra">號外</b><span class="extra-names"><small>THE WEDDING OF</small><em>Ian</em><i>&amp;</i><em>Geranium</em></span></div>
+          <p class="body-text" data-i18n="newsText">两姓之好，一生之约
+以爱为名，共赴朝夕</p>
+          <div class="sq" data-reveal="pop"><b>欢</b><b>喜</b><b>嫁</b><b>娶</b></div>
+        </div>
+        <div class="frame tall" data-reveal="jump-right"><img src="images/white.jpg" alt="白纱婚纱照" loading="lazy"></div>
+      </div>
+    </section>
+
+    <hr class="divider" data-reveal="grow">
+
+    <!-- 4. Pun: 钟意你 / 忠于你 -->
+    <section class="pun">
+      <div class="pun-top" data-reveal="left">
+        <div class="sq" data-reveal="pop"><b>钟</b><b>意</b><b>你</b></div>
+        <span class="caps">FALL IN LOVE</span>
+      </div>
+      <div class="frame" data-reveal="zoom"><img src="images/hug.jpg" alt="头纱下的新人" loading="lazy" style="object-position:38% center"></div>
+      <div class="pun-bottom" data-reveal="right">
+        <span class="caps">WITH YOU</span>
+        <div class="sq" data-reveal="pop"><b>忠</b><b>于</b><b>你</b></div>
+      </div>
+      <p class="body-text" data-reveal="lines" data-i18n="punText">钟意你，是这辈子最幸运的事
+余生很长，朝朝暮暮，岁岁年年都忠于你</p>
+    </section>
+
+    <!-- 5. Fate -->
+    <section class="fate">
+      <div class="fate-grid">
+        <div class="fate-side" data-reveal="left">
+          <div class="sq" data-reveal="pop"><b>喜</b><b>结</b><b>良</b><b>缘</b></div>
+          <div class="poem"><span class="vertical">执芷之手</span><span class="vertical">与旨偕老</span></div>
+          <span class="hearts">♥♥♥</span>
+        </div>
+        <div class="frame" data-reveal="right"><img src="images/sign.jpg" alt="新人举着我们结婚啦的牌子" loading="lazy"></div>
+      </div>
+      <span class="banner" data-reveal="drop" data-i18n="fateBanner">姻缘呢，是上天最好的安排！</span>
+      <div class="note-box" data-reveal="up">
+        <p class="body-text" data-i18n="fateText">今天起，我们正式成为彼此的终身队友
+去看没看过的风景，吃没吃过的美食
+往后的日子，一起慢慢变老
+快快乐乐，过好这一辈子</p>
+      </div>
+    </section>
+
+    <!-- 6. Bloom: banner, then full photo with petals and calendar -->
+    <section class="bloom-head">
+      <span class="banner" data-reveal="drop" data-i18n="countBanner">好久不见～请你来喝喜酒啦</span>
+    </section>
+    <section class="bloom" aria-label="婚礼日期">
+      <img src="images/curtain.jpg" alt="新人在喜字红帘后" loading="lazy">
+      <div class="petals" id="petals" aria-hidden="true"></div>
+      <div class="calendar" data-reveal="up">
+        <div class="month">01 / 2027</div>
+        <div class="cal-grid" id="cal-grid"></div>
+      </div>
+    </section>
+
+    <!-- 7. Countdown -->
+    <section class="countdown">
+      <span class="script-bg" aria-hidden="true" data-reveal="write">Wedding</span>
+      <div class="date-info" id="date">
+      <div class="count-row" data-reveal="pop" aria-live="off">
+        <span class="hearts">♥</span>
+        <div class="count-box"><strong id="cd-d">0</strong><small data-i18n="cdD">天</small></div>
+        <div class="count-box"><strong id="cd-h">0</strong><small data-i18n="cdH">时</small></div>
+        <div class="count-box"><strong id="cd-m">0</strong><small data-i18n="cdM">分</small></div>
+        <div class="count-box"><strong id="cd-s">0</strong><small data-i18n="cdS">秒</small></div>
+        <span class="hearts">♥</span>
+      </div>
+      <p class="when" data-reveal="up" data-i18n="when">2027 年 1 月 23 日 · 星期六</p>
+      <p class="subtle" data-reveal="up" data-i18n="lunar">农历丙午年 腊月十六</p>
+      <div class="times" data-reveal="up">
+        <div><time datetime="2027-01-23T18:00:00+08:00">6:00 PM</time><span data-i18n="reception">迎宾</span></div>
+        <div><time datetime="2027-01-23T18:30:00+08:00">6:30 PM</time><span data-i18n="dinner">开席</span></div>
+      </div>
+      <p class="eve-note" data-reveal="up" data-i18n="eveNote">婚礼前一天 1 月 22 日（星期五）晚上
+家中备有自由餐
+欢迎提前来坐坐、聊聊天、一起分享喜悦</p>
+      </div>
+    </section>
+
+    <hr class="divider" data-reveal="grow">
+
+    <!-- 8. Venue -->
+    <section class="venue">
+      <div class="love-line" data-reveal="up"><span class="hearts">♥♥♥</span><i>love is all we have</i></div>
+      <div class="frame wide" data-reveal="zoom"><img src="images/lion.jpg" alt="新人与舞狮头" loading="lazy"></div>
+      <div class="venue-info" id="venue">
+      <span class="banner" data-reveal="drop" data-i18n="venueBanner">吃好喝好！不醉不归！婚礼见！</span>
+      <div class="map-row" data-reveal="zoom">
+        <span class="vertical" data-i18n="venueL">婚宴</span>
+        <div class="frame map">
+          <iframe title="婚宴地点地图" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=4.6240596,101.118103&z=16&output=embed"></iframe>
+        </div>
+        <span class="vertical" data-i18n="venueR">地点</span>
+      </div>
+      <p class="venue-name" data-reveal="up">東勝海鲜酒家<span class="hall">Hall C</span></p>
+      <p class="venue-en" data-reveal="up">Exquisite Ipoh Restaurant and Banquet</p>
+      <p class="subtle" data-reveal="up" data-i18n="city">马来西亚 · 怡保</p>
+      <div class="buttons" data-reveal="up">
+        <a class="btn solid" href="https://maps.app.goo.gl/95ZVWTcPvEnDkT8U9" target="_blank" rel="noopener noreferrer">Google Maps</a>
+        <a class="btn" href="https://waze.com/ul?ll=4.6240596%2C101.118103&navigate=yes" target="_blank" rel="noopener noreferrer">Waze</a>
+      </div>
+      </div>
+    </section>
+
+    <!-- 9. RSVP -->
+    <section class="rsvp">
+      <span class="banner" data-reveal="drop" data-i18n="rsvpBanner">家有喜事 · 恭候光临</span>
+      <div class="frame" data-reveal="zoom"><img src="images/flowers.jpg" alt="花海中的新人" loading="lazy"></div>
+      <div class="rsvp-info" id="rsvp">
+      <div class="rsvp-grid" data-reveal="up">
+        <span class="vertical" data-i18n="rsvpL">良辰已定</span>
+        <form id="rsvp-form" novalidate>
+          <div class="field">
+            <label for="guest-name" data-i18n="fName">姓名</label>
+            <input id="guest-name" name="guest" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label data-i18n="fSide">来自哪一方</label>
+            <div class="choice">
+              <input type="radio" id="side-groom" name="side" value="男方 Groom">
+              <label for="side-groom" data-i18n="fGroom">男方亲友</label>
+              <input type="radio" id="side-bride" name="side" value="女方 Bride">
+              <label for="side-bride" data-i18n="fBride">女方亲友</label>
+            </div>
+          </div>
+          <div class="field">
+            <label data-i18n="fAttend">是否出席</label>
+            <div class="choice">
+              <input type="radio" id="att-yes" name="attending" value="出席 Yes" checked>
+              <label for="att-yes" data-i18n="fYes">欣然赴约</label>
+              <input type="radio" id="att-no" name="attending" value="无法出席 No">
+              <label for="att-no" data-i18n="fNo">遗憾缺席</label>
+            </div>
+          </div>
+          <div id="attend-fields">   <!-- only asked when the guest is coming -->
+            <div class="field">
+              <label for="guest-count" data-i18n="fCount">出席人数</label>
+              <input id="guest-count" name="count" type="number" value="1" min="1" max="50" step="1" inputmode="numeric">
+            </div>
+            <div class="field">
+              <label for="baby-chairs" data-i18n="fBaby">需要几张婴儿椅</label>
+              <input id="baby-chairs" name="baby" type="number" value="0" min="0" max="10" step="1" inputmode="numeric">
+            </div>
+            <div class="field">
+              <label data-i18n="fFriday">星期五晚上会来家里吗</label>
+              <div class="choice">
+                <input type="radio" id="fri-yes" name="friday" value="会来 Yes">
+                <label for="fri-yes" data-i18n="fFriYes">一定来</label>
+                <input type="radio" id="fri-no" name="friday" value="不来 No">
+                <label for="fri-no" data-i18n="fFriNo">来不了</label>
+              </div>
+            </div>
+          </div>
+          <button class="btn solid" type="submit" data-i18n="submit">提交</button>
+          <p id="rsvp-status" role="status"></p>
+        </form>
+        <span class="vertical" data-i18n="rsvpR">静候佳宾</span>
+      </div>
+      <p class="subtle" style="margin-top:14px" data-reveal="up" data-i18n="deadline">敬请于 2026 年 12 月 19 日前回复</p>
+      </div>
+    </section>
+
+    <!-- 10. Closing (door gift style) -->
+    <section class="closing">
+      <img class="floral tl" src="images/floral-tl.webp" alt="" loading="lazy" data-reveal="bloom">
+      <img class="floral br" src="images/floral-br.webp" alt="" loading="lazy" data-reveal="bloom">
+      <div class="ring" data-reveal="zoom"><img src="images/closeup.jpg" alt="新人笑脸" loading="lazy" style="object-position:40% center"></div>
+      <img class="names-zh" src="images/names-zh.png" alt="旨軒 ♥ 芷盈" data-reveal="write" loading="lazy">
+      <hr class="divider" data-reveal="grow">
+      <img class="names-script" src="images/names-script.png" alt="Ian &amp; Geranium" data-reveal="write" loading="lazy">
+      <img class="poem-zh" src="images/poem-zh.png" alt="执芷之手 ♥ 与旨偕老" data-reveal="write" loading="lazy">
+      <hr class="divider dots" data-reveal="grow">
+      <div class="date-gold" data-reveal="up"><i>◆</i>2027.01.23<i>◆</i></div>
+      <p class="body-text" style="margin-top:18px" data-reveal="lines" data-i18n="closing">感谢你成为我们幸福时刻的一部分，
+1 月 23 日，怡保见！</p>
+      <p class="caps" style="margin-top:10px; white-space:pre-line" data-i18n="namesFull">沈旨軒 & 钟芷盈</p>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Invitation navigation">
+    <a href="#date" data-i18n="navDate">婚礼时间</a>
+    <a href="#venue" data-i18n="navVenue">婚宴地点</a>
+    <a href="#rsvp" data-i18n="navRsvp">回复出席</a>
+  </nav>
+
+  <script>
+    // ===== RSVP: fill these in from your Google Form (see setup steps) =====
+    const RSVP_FORM = {
+      action: 'https://docs.google.com/forms/d/e/1FAIpQLSc_oXorh3QeVAMYC6kZbYOR3z6BhxunqU0_dQB3d63Utth7xA/formResponse',
+      name: 'entry.368870855',        // 姓名
+      attending: 'entry.540068012',   // 是否出席
+      count: 'entry.1246136709',      // 出席人数
+      baby: 'entry.915509661',        // 婴儿椅
+      friday: 'entry.1102890551',     // 星期五
+      side: 'entry.1558938663',       // 男方女方
+    };
+
+    const WEDDING_TIME = new Date('2027-01-23T18:00:00+08:00');
+
+    // always start from the top: the browser must not restore the old scroll position on refresh
+    history.scrollRestoration = 'manual';
+
+    const translations = {
+      zh: {
+        namesShort: '沈旨軒 & 钟芷盈', brideName: '钟芷盈', groomName: '沈旨軒', namesFull: '沈旨軒 & 钟芷盈',
+        almDow: '星期六', almLunar: '腊月十六',
+        dY: '年', dM: '月', dD: '日',
+        heroL: '请你', heroStamp: '来喝喜酒啦', heroR: '赴宴', heroBig: '吾家有喜', heroYi: '宜嫁娶',
+        introTitle: '我们结婚啦',
+        introHi: 'HI~亲爱的家人朋友们',
+        introText: '当我们写下这封邀请的时候\n才发现\n这不只是一张婚礼请柬\n更是写给每一位\n陪我们走过这些年的你们\n因为有你们，才有今天的我们\n所以下一段路的第一步\n也想请你们在场',
+        introSign: '这杯喜酒, 敬过去的陪伴\n也敬往后的日子',   // half-width comma: the Long Cang full-width one leaves a gap
+        newsBanner: '沈家那小子和钟家那姑娘结婚啦！', newsExtra: '號外', newsText: '两姓之好，一生之约\n以爱为名，共赴朝夕',
+        punText: '钟意你，是这辈子最幸运的事\n余生很长，朝朝暮暮，岁岁年年都忠于你',
+        fateBanner: '姻缘呢，是上天最好的安排！', fateText: '今天起，我们正式成为彼此的终身队友\n去看没看过的风景，吃没吃过的美食\n往后的日子，一起慢慢变老\n快快乐乐，过好这一辈子',
+        countBanner: '好久不见～请你来喝喜酒啦', cdD: '天', cdH: '时', cdM: '分', cdS: '秒',
+        when: '2027 年 1 月 23 日 · 星期六', lunar: '农历丙午年 腊月十六', reception: '迎宾', dinner: '开席',
+        eveNote: '婚礼前一天 1 月 22 日（星期五）晚上\n家中备有自由餐\n欢迎提前来坐坐、聊聊天、一起分享喜悦',
+        venueBanner: '吃好喝好！不醉不归！婚礼见！', venueL: '婚宴', venueR: '地点', city: '马来西亚 · 怡保',
+        rsvpBanner: '家有喜事 · 恭候光临', rsvpL: '良辰已定', rsvpR: '静候佳宾',
+        fName: '姓名', fAttend: '是否出席', fYes: '欣然赴约', fNo: '遗憾缺席', fCount: '出席人数', fBaby: '需要几张婴儿椅', fSide: '来自哪一方', fGroom: '男方亲友', fBride: '女方亲友', fFriday: '星期五晚上会来家里吗', fFriYes: '一定来', fFriNo: '来不了', submit: '提交',
+        deadline: '敬请于 2026 年 12 月 19 日前回复',
+        closing: '感谢你成为我们幸福时刻的一部分，\n1 月 23 日，怡保见！',
+        navDate: '婚礼时间', navVenue: '婚宴地点', navRsvp: '回复出席',
+        dow: ['日', '一', '二', '三', '四', '五', '六'],
+        msgNeedName: '请填写姓名', msgBadName: '请填写正确的名字', msgBadCount: '人数请填 1 到 50', msgBadBaby: '婴儿椅请填 0 到 10', msgNeedSide: '请选择男方或女方', msgNeedFriday: '请选择星期五会不会来', msgSending: '提交中…', msgDone: '收到啦，谢谢你的回复！', msgFail: '提交失败，请检查网络后再试',
+        msgNotSet: 'RSVP 表单还没设置好',
+      },
+      en: {
+        namesShort: 'Ian & Geranium', brideName: 'Geranium Cheng', groomName: 'Ian Shum', namesFull: 'Ian Shum Ci-Hin\n&\nGeranium Cheng Zhi Ying',
+        almDow: 'Saturday', almLunar: 'Lunar 12/16',
+        dY: 'YEAR', dM: 'MON', dD: 'DAY',
+        heroL: 'Join', heroStamp: 'our wedding', heroR: 'Us', heroBig: 'Joyful News', heroYi: 'Wedding Day',
+        introTitle: 'We\'re Getting Married',
+        introHi: 'Hi, dear family and friends,',
+        introText: 'As we sat down to write this invitation,\nwe realised\nit is not just a wedding invitation,\nit is a letter to every one of you\nwho has walked with us through the years.\nBecause of you, we are who we are today,\nso for the first step of our next journey,\nwe would love to have you there.',
+        introSign: 'Let\'s raise a glass,\nto the years behind us\nand the days ahead.',
+        newsBanner: 'The Shum boy weds the Cheng girl!', newsExtra: '號外', newsText: 'Two families, one promise.\nIn love, for all our days.',
+        punText: 'Falling for you was the luckiest thing.\nLife is long, and I\'ll always be true to you.',
+        fateBanner: 'Simply meant to be!', fateText: 'From today, we\'re teammates for life.\nNew places to see, new food to try,\ngrowing old together, slowly,\nhappy for the rest of our lives.',
+        countBanner: 'Long time no see! Come celebrate with us', cdD: 'days', cdH: 'hrs', cdM: 'min', cdS: 'sec',
+        when: 'Saturday, 23 January 2027', lunar: '16th day of the 12th lunar month', reception: 'Guest arrival', dinner: 'Dinner begins',
+        eveNote: 'The evening before, Friday 22 January,\nour families will have a buffet at home\nDrop by early to chat and share the joy',
+        venueBanner: 'Eat well, drink well, see you there!', venueL: '婚宴', venueR: '地点', city: 'Ipoh · Malaysia',
+        rsvpBanner: 'We\'d love to have you there', rsvpL: '良辰已定', rsvpR: '静候佳宾',
+        fName: 'Name', fAttend: 'Will you attend?', fYes: 'Joyfully yes', fNo: 'Sadly no', fCount: 'Number of guests', fBaby: 'Baby chairs needed', fSide: 'Guest of', fGroom: 'The groom', fBride: 'The bride', fFriday: 'Joining us at home on Friday evening?', fFriYes: 'Yes', fFriNo: 'No', submit: 'Submit',
+        deadline: 'Kindly reply by 19 December 2026',
+        closing: 'Thank you for being part of our celebration.\nSee you in Ipoh on 23 January!',
+        navDate: 'Date', navVenue: 'Venue', navRsvp: 'RSVP',
+        dow: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+        msgNeedName: 'Please enter your name', msgBadName: 'Please enter a valid name', msgBadCount: 'Please enter 1 to 50 guests', msgBadBaby: 'Please enter 0 to 10 baby chairs', msgNeedSide: 'Please choose the groom or the bride', msgNeedFriday: 'Please let us know about Friday', msgSending: 'Sending…', msgDone: 'Got it, thank you!', msgFail: 'Could not send. Please check your connection and try again',
+        msgNotSet: 'RSVP form is not set up yet',
+      },
+    };
+    let lang = 'zh';
+    const t = key => translations[lang][key];
+
+    // ----- language -----
+    function setLanguage(next) {
+      lang = next;
+      document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+      document.title = lang === 'zh' ? '沈旨軒 & 钟芷盈｜婚礼邀请' : 'Ian & Geranium | Wedding Invitation';
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        el.textContent = t(el.dataset.i18n);
+        if (el.dataset.reveal === 'lines') splitLines(el);
+      });
+      document.querySelectorAll('[data-language]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === lang)));
+      renderCalendar();
+    }
+    document.querySelectorAll('[data-language]').forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+
+    // ----- opening + music -----
+    const opening = document.getElementById('opening');
+    const bgm = document.getElementById('bgm');
+    const musicBtn = document.getElementById('music');
+    function syncMusicButton() {
+      const playing = !bgm.paused;
+      musicBtn.classList.toggle('playing', playing);
+      musicBtn.setAttribute('aria-pressed', String(playing));
+    }
+    bgm.addEventListener('play', syncMusicButton);
+    bgm.addEventListener('pause', syncMusicButton);
+    musicBtn.addEventListener('click', () => { bgm.paused ? bgm.play() : bgm.pause(); });
+    const nudgeTimer = setTimeout(() => opening.classList.add('nudge'), 3000);
+    // how far the tag slides up out of the envelope, and how far the envelope moves down so both sit centred
+    function cardMotion() {
+      const tagH = document.getElementById('tag').offsetHeight;
+      const scene = opening.querySelector('.env-scene');
+      const tucked = 30;   // the tag's bottom stays this far inside the envelope
+      const top = Math.max(12, (innerHeight - (tagH - tucked + scene.offsetHeight)) / 2);
+      return { rise: tagH - tucked + 14, sink: top + tagH - tucked - scene.getBoundingClientRect().top };
+    }
+    function openInvitation() {
+      if (opening.classList.contains('open')) return;
+      clearTimeout(nudgeTimer);
+      bgm.play();
+      const { rise, sink } = cardMotion();
+      opening.style.setProperty('--rise', rise + 'px');
+      opening.style.setProperty('--sink', sink + 'px');
+      opening.classList.add('open');                                    // seal breaks, flap folds up
+      document.body.classList.remove('locked');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      setTimeout(() => opening.classList.add('rise'), 850);             // a moment to see the open flap, then the tag slides out
+      setTimeout(() => opening.classList.add('leave'), 2350);           // tag floats away, envelope and doors part
+      setTimeout(() => opening.remove(), 3750);
+      setTimeout(startReveal, 2850);
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) autoTimer = setTimeout(() => setAuto(true), 4100);
+    }
+    document.getElementById('open-btn').addEventListener('click', openInvitation);
+
+    // ----- auto scroll: slow scroll after the doors open; stops the moment the guest touches the page -----
+    const AUTO_SPEED = 40;   // px per second, whole page takes about one song
+    const autoBtn = document.getElementById('auto');
+    let autoOn = false, autoPos = 0, autoLast = 0, autoTimer = 0;
+    const maxScroll = () => document.documentElement.scrollHeight - innerHeight;
+    function autoStep(now) {
+      if (!autoOn) return;
+      if (Math.abs(scrollY - autoPos) > 4) { setAuto(false); return; }   // guest scrolled another way (scrollbar, link)
+      const dt = Math.min((now - autoLast) / 1000, 0.05);
+      autoLast = now;
+      autoPos = Math.min(maxScroll(), autoPos + AUTO_SPEED * dt);
+      window.scrollTo({ top: autoPos, behavior: 'instant' });
+      if (autoPos >= maxScroll()) { setAuto(false); return; }
+      requestAnimationFrame(autoStep);
+    }
+    function setAuto(on) {
+      autoOn = on;
+      autoBtn.setAttribute('aria-pressed', String(on));
+      if (!on) return;
+      if (scrollY >= maxScroll() - 2) window.scrollTo({ top: 0, behavior: 'instant' });   // at the end: start again from the top
+      autoPos = scrollY;
+      autoLast = performance.now();
+      requestAnimationFrame(autoStep);
+    }
+    function guestTookOver(e) {
+      if (e.target instanceof Element && e.target.closest('.controls')) return;   // music, language and play buttons don't stop it
+      clearTimeout(autoTimer);
+      if (autoOn) setAuto(false);
+    }
+    ['pointerdown', 'touchstart', 'wheel', 'keydown'].forEach(type => window.addEventListener(type, guestTookOver, { passive: true }));
+    autoBtn.addEventListener('click', () => setAuto(!autoOn));
+
+    // ----- entrance animations: start once the doors open, play one after another, replay when scrolled back -----
+    const STAGGER = 0.15;   // seconds between elements that come into view together
+    function splitLines(el) {
+      const lines = el.textContent.split('\n');
+      el.textContent = '';
+      lines.forEach((text, i) => {
+        const line = document.createElement('span');
+        line.className = 'line';
+        line.style.setProperty('--i', i);
+        line.textContent = text || '\u00a0';   // keep blank lines as a gap
+        el.appendChild(line);
+      });
+    }
+    document.querySelectorAll('[data-reveal="pop"]').forEach(el => [...el.children].forEach((child, i) => child.style.setProperty('--i', i)));
+    function showBatch(entries) {
+      entries
+        .filter(e => e.isIntersecting && !e.target.classList.contains('in'))
+        .map(e => e.target)
+        .sort((a, b) => (a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1))
+        .forEach((el, i) => { el.style.setProperty('--d', `${i * STAGGER}s`); el.classList.add('in'); });
+    }
+    // content waits until it is well inside the screen; corner flowers bloom as soon as they peek in
+    const showObserver = new IntersectionObserver(showBatch, { rootMargin: '0px 0px -22% 0px' });
+    const edgeObserver = new IntersectionObserver(showBatch);
+    const resetObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting || !e.target.classList.contains('in')) return;
+        const el = e.target;   // fully off screen: reset instantly so it plays again next time
+        el.classList.add('no-anim');
+        el.classList.remove('in');
+        void el.offsetWidth;
+        el.classList.remove('no-anim');
+      });
+    });
+    function startReveal() {
+      document.querySelectorAll('main [data-reveal]').forEach(el => {
+        (el.dataset.reveal === 'bloom' ? edgeObserver : showObserver).observe(el);
+        resetObserver.observe(el);
+      });
+    }
+
+    // ----- petals -----
+    const petalColors = ['#fbf4e6', '#f6d9d2', '#e9b9ae', '#e2c48f'];
+    const petals = document.getElementById('petals');
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('span');
+      p.className = 'petal';
+      p.style.left = `${Math.random() * 100}%`;
+      p.style.background = petalColors[i % petalColors.length];
+      p.style.animationDuration = `${6 + Math.random() * 6}s`;
+      p.style.animationDelay = `${-Math.random() * 12}s`;
+      p.style.scale = String(0.7 + Math.random() * 0.8);
+      petals.appendChild(p);
+    }
+
+    const petalLayer = document.getElementById('petal-layer');
+    for (let i = 0; i < 9; i++) {
+      const p = document.createElement('span');
+      p.style.left = `${Math.random() * 100}%`;
+      p.style.animationDuration = `${11 + Math.random() * 8}s`;
+      p.style.animationDelay = `${-Math.random() * 18}s`;
+      p.style.scale = String(0.7 + Math.random() * 0.7);
+      petalLayer.appendChild(p);
+    }
+
+    // ----- calendar (January 2027, 23 marked) -----
+    function renderCalendar() {
+      const grid = document.getElementById('cal-grid');
+      const firstDow = new Date(2027, 0, 1).getDay();
+      const cells = t('dow').map(d => `<span class="dow">${d}</span>`);
+      for (let i = 0; i < firstDow; i++) cells.push('<span></span>');
+      for (let d = 1; d <= 31; d++) cells.push(d === 23 ? `<span class="day-mark">${d}</span>` : `<span>${d}</span>`);
+      grid.innerHTML = cells.join('');
+    }
+
+    // ----- countdown -----
+    const cd = { d: document.getElementById('cd-d'), h: document.getElementById('cd-h'), m: document.getElementById('cd-m'), s: document.getElementById('cd-s') };
+    function tick() {
+      const ms = Math.max(0, WEDDING_TIME - Date.now());
+      const sec = Math.floor(ms / 1000);
+      cd.d.textContent = Math.floor(sec / 86400);
+      cd.h.textContent = String(Math.floor(sec % 86400 / 3600)).padStart(2, '0');
+      cd.m.textContent = String(Math.floor(sec % 3600 / 60)).padStart(2, '0');
+      cd.s.textContent = String(sec % 60).padStart(2, '0');
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // ----- RSVP -----
+    const form = document.getElementById('rsvp-form');
+    const status = document.getElementById('rsvp-status');
+    const attendFields = document.getElementById('attend-fields');
+    function showStatus(message, isError) { status.textContent = message; status.classList.toggle('error', isError); }
+    form.addEventListener('change', () => { attendFields.hidden = form.elements.attending.value.startsWith('无法'); });
+    // a name needs at least one letter (any language) and no digits
+    const isValidName = name => /\p{L}/u.test(name) && !/\p{Nd}/u.test(name);
+    // the first problem in the form as { key, field }, or null when everything is fine
+    function formProblem() {
+      const fields = form.elements;
+      const name = fields.guest.value.trim();
+      if (!name) return { key: 'msgNeedName', field: fields.guest };
+      if (!isValidName(name)) return { key: 'msgBadName', field: fields.guest };
+      if (!fields.side.value) return { key: 'msgNeedSide', field: fields.side[0] };
+      if (!fields.attending.value.startsWith('无法')) {
+        const count = Number(fields.count.value);
+        if (!Number.isInteger(count) || count < 1 || count > 50) return { key: 'msgBadCount', field: fields.count };
+        const baby = Number(fields.baby.value);
+        if (fields.baby.value.trim() === '' || !Number.isInteger(baby) || baby < 0 || baby > 10) return { key: 'msgBadBaby', field: fields.baby };
+        if (!fields.friday.value) return { key: 'msgNeedFriday', field: fields.friday[0] };
+      }
+      return null;
+    }
+    // once an error is showing, it follows what the guest types and disappears when the form is fine
+    form.addEventListener('input', () => {
+      if (!status.classList.contains('error')) return;
+      const problem = formProblem();
+      showStatus(problem ? t(problem.key) : '', Boolean(problem));
+    });
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      const fields = form.elements;
+      const problem = formProblem();
+      if (problem) { showStatus(t(problem.key), true); problem.field.focus(); return; }
+      const name = fields.guest.value.trim();
+      if (!RSVP_FORM.action) { showStatus(t('msgNotSet'), true); throw new Error('RSVP_FORM.action is empty'); }
+      const attending = fields.attending.value;
+      const body = new URLSearchParams();   // standard form encoding, what Google Forms itself sends
+      body.append(RSVP_FORM.name, name);
+      body.append(RSVP_FORM.attending, attending);
+      body.append(RSVP_FORM.count, attending.startsWith('无法') ? '0' : fields.count.value);
+      body.append(RSVP_FORM.baby, attending.startsWith('无法') ? '0' : fields.baby.value);
+      body.append(RSVP_FORM.friday, attending.startsWith('无法') ? '' : fields.friday.value);   // not asked when they can't come
+      body.append(RSVP_FORM.side, fields.side.value);
+      const button = form.querySelector('button');
+      button.disabled = true;
+      showStatus(t('msgSending'), false);
+      try {
+        // Google Forms does not send CORS headers, so the response is opaque. A network error still throws.
+        await fetch(RSVP_FORM.action, { method: 'POST', mode: 'no-cors', body });
+        showStatus(t('msgDone'), false);
+        form.reset();
+        attendFields.hidden = false;
+      } catch (error) {
+        showStatus(t('msgFail'), true);
+        throw error;
+      } finally {
+        button.disabled = false;
+      }
+    });
+
+    // ----- start: ?lang=en opens in English -----
+    setLanguage(new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'zh');
+  </script>
+</body>
+</html>
